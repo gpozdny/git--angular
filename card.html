@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="card">
+        <h2 class="user__card">{{userInfo.login}}</h2>
+        <h3>ID: {{userInfo.id}}</h3>
+        <div class="user__image">
+            <img src="{{userInfo.avatar_url}}">
+        </div>
+        <a href="{{userInfo.html_url}}" target="_blank">Github</a>
+        <span>Score: {{userInfo.score}}</span>
+        <button class="show__more" ng-click="showMore()" ng-model="showBtn" ng-if="!loaded && !loading">Show repos</button>
+        <span class="loading" ng-if="loading">Loading...</span>
+    </div>
+    <div class="more">
+        <ul>
+            <li  ng-repeat="repo in repos">
+                <a href="{{repo.html_url}}" target="_blank">{{repo.name}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
+

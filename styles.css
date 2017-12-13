@@ -1,0 +1,47 @@
+input {
+    width: 50px;
+  }
+
+#filter {
+  width: 15px;
+
+}
+
+.container, .card   {
+  display: flex;
+}
+
+.container  {
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  
+}
+
+.show__more  {
+  position: absolute;
+  bottom: 73%;
+  right: 0;
+}
+
+.user__image img  {
+  width: 300px;
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.4)
+}
+
+.search {
+  width: 100px;
+}
+
+.loading {
+  position: absolute;
+  bottom: 73%;
+  right: 0;
+}

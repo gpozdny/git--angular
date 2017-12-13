@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+
+<head>
+  <script data-require="angularjs@1.6.4" data-semver="1.6.4" src="https://code.angularjs.org/1.6.4/angular.min.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body ng-controller="myController">
+    <h1>Table</h1>
+    <label for="userFind">Find user:</label>
+    <input type="text" class="search" id="userFind" ng-model="searchBar"ng-model-options="{ allowInvalid: true, debounce: 300 }" ng-change="userSearch()">
+    <div class="block" ng-repeat="item in userData.items" ng-if="userData.items">
+      <user-card user-info="item"></user-card>
+    </div>
+    
+<!-- <factplan grid-items="gridItems"></factplan> -->
+<!-- <test info="myApp"></test> -->
+<script src="app.js"></script>
+<script src="scripts/service.js"></script>
+<script src="scripts/controller.js"></script>
+<!-- <script src="scripts/filter.js"></script> -->
+<script src="scripts/card.js"></script>
+
+
+</body>
+
+</html>

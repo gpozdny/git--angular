@@ -1,0 +1,38 @@
+<!-- <pre>
+    {{ gridItems | json }}
+</pre> -->
+
+<table > 
+        <tr>
+          <th>
+          <button type="submit" ng-click="addData()">+</button>
+          {{ gridItems.length }}
+        </th>
+        <th>Name</th>
+        <th>Plan</th>
+        <th>Fact</th>
+        <td>
+          <input type="checkbox" id="filter" ng-model="showEmpty" >
+          <label for="filter">Show Empty Cells</label>
+        </td>
+        </tr>
+        <tr ng-repeat="item in gridItems | emptyFilter:showEmpty track by $index">
+          <td>{{ $index+1 }} </td>
+          <td>
+            <input type="text" ng-model="item.name"/>
+          </td>
+          <td>
+            <input type="number" ng-model="item.plan" ng-change="sumDataByfield('plan')"/>
+          </td>
+          <td>
+            <input type="number" ng-model="item.fact" ng-change="sumDataByfield('fact')"/>
+          </td>
+          <td><button type="submit" ng-click="removeData($index)">-</button></td>
+        </tr>
+        <tr>
+          <th>Total:</th>
+          <td></td>
+          <td><span>{{sumOfData.plan}}</span></td>
+          <td>{{sumOfData.fact}}</td>
+        </tr>
+</table>
